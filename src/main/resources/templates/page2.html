@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
  <h1> List of users </h1>
@@ -13,12 +19,14 @@
         <th> Id</th>
         <th> Name</th>
         <th> Age</th>
+        <th></th>
     </tr>
 
     <tr th:each="user : ${users}">
         <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.age}"></td>
+        <td><a th:href="@{/deleteuser(id=${user.id})}" > Delete </a></td>
     </tr>
 
     </tr>

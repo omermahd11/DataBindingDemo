@@ -19,4 +19,21 @@ public class UserService {
     public void addUser(User user) {
         users.add(user);
     }
+
+
+    //delete
+
+    public void deleteUser(int id) {
+
+        for (User user : users) {
+            if (user.getId() == id) {
+                users.remove(user);
+                break;
+            }
+        }
+    }
+
+    //update
+
+    
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,15 @@ public class MainController {
 
         model.addAttribute("users", userService.getUsers());
         return "page2";
+    }
+
+    @GetMapping("/deleteuser")
+    public String action4(Model model, @RequestParam int id) {
+
+        userService.deleteUser(id);
+        model.addAttribute("users", userService.getUsers());
+        return "page2";
+
     }
 
 }
