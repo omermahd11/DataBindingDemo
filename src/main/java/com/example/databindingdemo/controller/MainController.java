@@ -28,6 +28,7 @@ public class MainController {
     @PostMapping("/adduser")
     public String action2( Model model , @ModelAttribute User user) {
      //   User user = new User(1,"Tim", 22);
+
         System.out.println(user);
 
         userService.addUser(user);

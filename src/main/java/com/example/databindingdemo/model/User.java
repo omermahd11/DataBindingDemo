@@ -1,8 +1,15 @@
 package com.example.databindingdemo.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="users_table")
 public class User {
 
-    int id;
+
+    @Id
+  // @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    Integer id;
     String name;
     int age;
 
@@ -19,7 +26,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
